@@ -1,15 +1,15 @@
 # Semantic Emoji Search
-
 An application to search for emojis using natural language processing. The application uses a deep learning model to find relevant emojis based on user input.
 
-## Features
+## Demo
+<video src="https://github.com/user-attachments/assets/28999316-90be-4d1b-a171-40f2ee5fdcf8"></video>
 
+## Features
 - Search for emojis using natural language queries
 - Real-time emoji suggestions
 - Copy emojis to clipboard with a single click
 
 ## Working
-
 The application uses several deep learning concepts to provide intelligent semantic emoji search capabilities. Let's go through the core concepts.
 
 ### 1. Sentence Transformers
@@ -21,7 +21,6 @@ At the heart of this application is a technology called **Sentence Transformers*
 **How it works in simple terms**: When we type a word like "happy", the model doesn't just look for emojis with "happy" in their name. Instead, it understands that concepts like "joy", "cheerful", "smile", and "celebration" are semantically related to happiness, and can find emojis that match these concepts as well.
 
 ### 2. Word Embeddings
-
 The model converts words into what are called **embeddings** - essentially long lists of numbers (vectors) that represent the meaning of those words in a multi-dimensional space.
 
 **Simple explanation**: Imagine that each word in the English language can be placed somewhere on a huge map. Words with similar meanings would be placed close together on this map. The embedding is like the coordinates of each word on this map.
@@ -36,7 +35,6 @@ The model in our application creates these number representations (embeddings) f
 - The search query (when we search)
 
 ### 3. Cosine Similarity
-
 Once both the emojis and our search query are converted into these number representations (vectors), the application uses a mathematical technique called **cosine similarity** to find matches.
 
 **What it means**: Cosine similarity measures the angle between two vectors. The smaller the angle, the more similar the meanings.
@@ -46,7 +44,6 @@ Once both the emojis and our search query are converted into these number repres
 In the code, this happens in the `search` function of the `EmojiSearchModel` class, where it calculates similarities between our query and all the emoji embeddings.
 
 ### 4. Deep Learning Model Architecture
-
 The model being used (`paraphrase-MiniLM-L6-v2`) is a smaller version of much larger language models. It's based on a transformer architecture, which is the same technology that powers models like GPT and BERT.
 
 **What makes it "deep"**: The model consists of multiple layers of artificial neurons stacked on top of each other (hence "deep"). Each layer learns different aspects of language, from simple word patterns to complex semantic relationships.
@@ -54,7 +51,6 @@ The model being used (`paraphrase-MiniLM-L6-v2`) is a smaller version of much la
 **Why it's efficient**: The "Mini" in the name indicates this is a compressed version of a larger model. It's been distilled to capture most of the knowledge while being much faster and using less memory, making it suitable for a web application.
 
 ### 5. How It All Works Together
-
 Here's the complete flow of how the deep learning works in this application:
 
 1. **Preprocessing**: When the application starts, it takes all emoji names and descriptions and converts them into embeddings (numerical representations) using the Sentence Transformer model.
@@ -70,15 +66,11 @@ Here's the complete flow of how the deep learning works in this application:
 This approach allows the search to go beyond simple keyword matching and understand the semantic meaning behind our query, providing more intuitive and relevant results.
 
 ## Technology Stack
-
 - **Backend**: FastAPI (Python)
 - **Frontend**: HTML, CSS, JavaScript with Bootstrap
 - **NLP**: Sentence Transformers for semantic search
 
-## Setup Instructions
-
-### Backend Setup
-
+## Setup
 1. Navigate to the backend directory:
    ```
    cd backend
@@ -101,7 +93,6 @@ This approach allows the search to go beyond simple keyword matching and underst
    ```
 
 ## Usage
-
 1. Enter a query in the search box (e.g., "happy", "celebration", "food")
 2. The application will display relevant emojis based on our query
 3. Click on an emoji to copy it to the clipboard
