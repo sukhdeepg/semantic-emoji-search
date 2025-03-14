@@ -1,4 +1,4 @@
-# Semantic Emoji Search Application
+# Semantic Emoji Search
 
 An application to search for emojis using natural language processing. The application uses a deep learning model to find relevant emojis based on user input.
 
